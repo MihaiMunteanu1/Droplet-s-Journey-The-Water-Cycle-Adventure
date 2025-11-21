@@ -1,97 +1,150 @@
-Documentație de Proiectare Finală: "Aventura Picăturii"
+Documentație de Proiectare: Aplicație Educațională "Aventura Picăturii"
 
 Echipa: Grupa 234
 Curs: IOC 2025-2026
-Data: 21 Noiembrie 2025
+Data Actualizării: 21 Noiembrie 2025
 
-I. Viziunea Proiectului
+I. Descriere Generală
 
-"Aventura Picăturii" este o aplicație desktop educativă destinată copiilor de grupă mare (5-6 ani). Proiectul transformă lecția clasică despre circuitul apei în natură într-o experiență interactivă, narativă și ludică.
+"Aventura Picăturii" este o aplicație desktop interactivă destinată copiilor de 5-6 ani (grupa mare), având ca scop educarea acestora cu privire la circuitul apei în natură. Aplicația combină elemente narative cu mecanici simple de joc (Drag & Drop, Click), oferind un mediu de învățare "fără eșec", plin de feedback vizual și auditiv.
 
-Copilul nu doar privește, ci participă activ la fiecare etapă a procesului natural, având rolul de a ajuta elementele naturii (soarele, norii, apa) să își îndeplinească funcția. Scopul final este înțelegerea cauzalității: căldura evaporă apa -> vaporii formează nori -> norii aduc ploaia -> ploaia umple râurile.
+1. Specificații Tehnice
 
-II. Specificații Tehnice și Design
+Platformă: Web / Desktop (rulată în browser).
 
-1. Context Tehnic
+Tehnologii: HTML5, CSS3, JavaScript (Vanilla).
 
-Platformă: Aplicație Web/Desktop (rulată în browser, compatibilă Windows/macOS).
+Grafică: SVG (Scalable Vector Graphics) pentru redare clară pe orice rezoluție.
 
-Tehnologii: HTML5, CSS3 (pentru animații fluide și stilizare), JavaScript (pentru logica jocului).
+Stil: "Flat design", culori vii, forme prietenoase.
 
-Grafică: Vectorială (SVG) pentru claritate maximă pe orice rezoluție, folosind un stil artistic "flat", prietenos și colorat.
+II. Structura Aplicației (Scene și Mecanici)
 
-2. Audiență și Accesibilitate
-
-Public Țintă: Copii 5-6 ani.
-
-Stil Vizual: Culori vii, forme rotunjite, elemente mari și clare.
-
-Feedback: Vizual (schimbări de culoare, animații de succes) și text simplu pentru instrucțiuni.
-
-3. Interacțiune
-
-Input Primar: Mouse (Drag & Drop, Click & Hold, Click simplu).
-
-Interfață: Minimalistă. Include o bară de progres sus pentru a motiva copilul și instrucțiuni clare (toasts) în partea de jos a ecranului.
-
-III. Descrierea Detaliată a Scenariului (Gameplay)
-
-Aplicația este structurată secvențial în 4 scene interactive, plus un ecran de start și unul de final.
+Aplicația este împărțită în 4 scene secvențiale, plus ecrane de start și final.
 
 Scena 1: Evaporarea
 
-Context: Un peisaj marin cu cer senin și un soare strălucitor.
+Obiectiv: Încălzirea apei mării.
 
-Obiectiv: Încălzirea apei mării pentru a crea vapori.
+Mecanică: Drag & Drop. Copilul trage soarele aproape de apă.
 
-Mecanică: Drag & Drop. Copilul trebuie să tragă soarele din colțul ecranului și să îl poziționeze aproape de linia apei.
-
-Feedback: Când soarele este poziționat corect (jos), apar animații ondulate care sugerează evaporarea ("aburi"), iar soarele strălucește mai puternic.
+Feedback: Apar aburi (animație SVG) când soarele este poziționat corect.
 
 Scena 2: Condensarea
 
-Context: Cerul albastru unde vaporii trebuie să se adune.
+Obiectiv: Formarea norului.
 
-Obiectiv: Formarea unui nor de ploaie prin colectarea picăturilor de apă evaporate.
+Mecanică: Drag & Drop. Copilul trage 6 picături de apă într-un contur de nor.
 
-Mecanică: Drag & Drop (Colectare). Pe ecran apar 6 picături de apă dispersate. Copilul trebuie să le tragă pe rând în interiorul unui contur de nor punctat.
-
-Feedback: Pe măsură ce picăturile sunt adăugate, conturul norului reacționează (flash alb). Când toate cele 6 picături sunt colectate, norul devine solid, pufos și primește o față veselă.
+Feedback: Conturul norului reacționează la fiecare picătură. La final, norul devine solid și pufos.
 
 Scena 3: Precipitațiile
 
-Context: Un peisaj montan impunător, cu un nor mare pe cer.
+Obiectiv: Declanșarea ploii pe munte.
 
-Obiectiv: Declanșarea ploii pentru a umple rezervoarele naturale de apă.
+Mecanică: Click & Hold (Ține apăsat). Copilul apasă pe nor.
 
-Mecanică: Click & Hold (Ține apăsat). Copilul trebuie să țină click apăsat pe nor.
+Feedback: Cerul se întunecă, norul devine gri, începe ploaia, iar un indicator ("Apă în Nor") arată progresul.
 
-Feedback Vizual:
+Scena 4: Colectarea (Curățarea Râului)
 
-Cât timp este apăsat, norul și cerul se întunecă (simulând furtuna).
+Obiectiv: Deblocarea cursului apei către mare.
 
-Începe o animație de ploaie care cade peste munte.
+Context: Un râu blocat de 5 pietre mari.
 
-În dreapta ecranului, un "rezervor" gradat arată vizual cantitatea de apă din nor scăzând (sau acumulându-se jos), învățând copilul despre volum și durată.
+Mecanică: Click (Apasă). Copilul dă click pe pietre pentru a le elimina.
 
-Scena 4: Colectarea și Curățarea
+Feedback: Pietrele dispar cu o animație de micșorare și estompare ("pop"). Când toate sunt eliminate, apa curge liber.
 
-Context: Un râu care curge printr-o câmpie verde, dar cursul apei este blocat de pietre.
+III. Implementare Tehnică - Focus pe Scena 4
 
-Obiectiv: Curățarea albiei râului pentru ca apa să poată ajunge înapoi în mare (închiderea circuitului).
+Această secțiune detaliază implementarea specifică a scenei finale, unde mecanica a fost schimbată din "Drag" în "Click" pentru o experiență mai fluidă.
 
-Mecanică: Click (Acțiune rapidă). Spre deosebire de primele scene, aici interacțiunea este de tip "curățare". Copilul dă click pe cele 5 pietre care blochează râul.
+1. Structura SVG (Vizual)
 
-Feedback: La click, pietrele se micșorează și dispar (efect "pop"), eliberând vizual cursul apei. Când toate pietrele sunt eliminate, apa curge liberă.
+Scena este construită folosind elemente SVG suprapuse:
 
-Final
+Fundal: Rectangul verde (#8bc34a) cu textură de iarbă (pattern).
 
-Ecran de felicitare cu un mesaj pozitiv ("Ai completat Circuitul Apei!") și buton de "Rejoacă", încurajând repetiția pentru fixarea cunoștințelor.
+Vegetație: Simboluri reutilizabile (<use>) pentru frunze (#leaf) și smocuri de iarbă (#grassTuft), rotite și scalate aleatoriu.
 
-IV. Elemente Tehnice Specifice Implementate
+Râu: Două căi (path):
 
-Grafică SVG Scalabilă: Toate elementele (nori, soare, munte, picături) sunt desenate direct în cod folosind SVG. Acest lucru asigură că jocul arată perfect clar pe orice ecran, de la laptopuri mici la monitoare mari, fără pixelare.
+#s4-bed: Albia râului (culoare nisipie).
 
-Sistem de Particule Simplificat: Pentru ploaie și aburi s-au folosit animații CSS și SVG (<animate>) care rulează fluid fără a îngreuna procesorul.
+#s4-water: Apa (albastru), care include o animație de curgere (stroke-dashoffset) activată la final.
 
-Gestionarea Stării (State Management): Aplicația ține minte progresul în timp real (câte picături au fost adunate, cât timp a plouat, câte pietre au fost curățate) pentru a trece automat la nivelul următor doar când sarcina este completă.
+Pietre: Grupuri <g> cu clasa .poppable, conținând formele pietrelor.
+
+2. Stiluri CSS (Animații)
+
+Pentru a crea efectul de dispariție, folosim tranziții CSS pe proprietățile opacity și transform.
+
+/* Clasa pentru pietrele interactive */
+.poppable {
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s; /* Animație la hover */
+    transform-origin: center center; /* Scalare din centru */
+}
+
+/* Efect la trecerea mouse-ului */
+.poppable:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Efectul de dispariție (aplicat prin JS) */
+/* Notă: Aceasta se aplică direct pe element prin style.opacity și style.transform */
+
+
+3. Logica JavaScript (Interacțiune)
+
+Funcția cleanRock(element) gestionează interacțiunea. Este atașată direct pe elementele SVG (onclick="cleanRock(this)").
+
+Codul Funcțional:
+
+let rocksCount = 0; // Contor pentru pietrele curățate
+
+function cleanRock(element) {
+    // 1. Prevenim click-ul dublu
+    if(element.classList.contains('cleaned')) return;
+    element.classList.add('cleaned');
+    
+    // 2. Aplicăm animația de dispariție
+    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    element.style.opacity = '0';
+    
+    // Calculăm scalarea curentă pentru a micșora de la dimensiunea actuală
+    // (Simplificat: adăugăm scale(0.3) la transformarea existentă)
+    // Notă: În implementarea reală, suprascriem transform cu o valoare hardcoded sau calculată
+    // pentru a evita conflictele de string-uri, dar efectul vizual este de "shrink".
+    const currentTransform = element.getAttribute('transform');
+    element.style.transform = `${currentTransform} scale(0.3)`;
+    
+    // Dezactivăm interacțiunea viitoare
+    element.style.pointerEvents = 'none';
+    
+    // 3. Ascundem elementul complet după terminarea animației (opțional, pentru performanță)
+    setTimeout(() => {
+        element.style.display = 'none';
+    }, 600);
+
+    // 4. Actualizăm starea jocului
+    rocksCount++;
+    document.getElementById('msg-4').textContent = `Curăță pietrele din râu! (${rocksCount}/5)`;
+
+    // 5. Verificăm condiția de victorie
+    if(rocksCount >= 5) {
+        // Pornim animația apei
+        document.getElementById('s4-anim').beginElement();
+        
+        // Mesaj final și buton de continuare
+        document.getElementById('msg-4').textContent = "Râul curge liber!";
+        setTimeout(showNextButton, 1500);
+    }
+}
+
+
+IV. Concluzii și Evoluție
+
+Proiectul a evoluat de la schițe statice la un prototip funcțional complet. Decizia de a simplifica interacțiunea în ultima scenă (de la Drag & Drop la Click) a fost luată pentru a oferi o satisfacție imediată ("gratificare instantanee") la finalul jocului, simulând curățarea rapidă și eficientă a mediului înconjurător.
