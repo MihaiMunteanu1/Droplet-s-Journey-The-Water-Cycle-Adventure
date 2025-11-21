@@ -1,99 +1,78 @@
-# **Propunere de Proiectare: Aplicație Educațională "Circuitul Apei în Natură"**
+# **Documentație de Proiectare Finală: "Aventura Picăturii"**
 
 Echipa: Grupa 234  
-Curs: IOC 2025-2026
+Curs: IOC 2025-2026  
+Data: 21 Noiembrie 2025
 
-## **I. Specificații Generale (Comune pentru ambele concepte)**
+## **I. Viziunea Proiectului**
 
-Aceste specificații tehnice și filosofii de design reprezintă fundația proiectului și se aplică indiferent de varianta de gameplay aleasă.
+**"Aventura Picăturii"** este o aplicație desktop educativă destinată copiilor de grupă mare (5-6 ani). Proiectul transformă lecția clasică despre circuitul apei în natură într-o experiență interactivă, narativă și ludică.
 
-### **1\. Context Tehnic și Audiență**
+Copilul nu doar privește, ci participă activ la fiecare etapă a procesului natural, având rolul de a ajuta elementele naturii (soarele, norii, apa) să își îndeplinească funcția. Scopul final este înțelegerea cauzalității: căldura evaporă apa \-\> vaporii formează nori \-\> norii aduc ploaia \-\> ploaia umple râurile.
 
-* **Platformă:** Aplicație Desktop (Windows/macOS).  
-* **Audiență:** Copii de grupă mare (5-6 ani).  
-* **Stil Grafic:** Culori vii, prietenoase, design 2.5D sau 3D low-poly (forme simplificate). Paletă cromatică dominată de albastru, verde și galben.
+## **II. Specificații Tehnice și Design**
 
-### **2\. Interacțiune și Input**
+### **1\. Context Tehnic**
 
-* **Input Primar:** Mouse (Drag & Drop, Click), Butoane-Pictogramă mari (fără text).  
-* **Input Secundar (Accesibilitate):** Comenzi vocale simple pentru navigare și acțiuni (ex: „Mergi”, „Sus”, „Ploaie”).  
-* **Interacțiune Duală:** Orice acțiune critică poate fi realizată atât prin click, cât și vocal.
+* **Platformă:** Aplicație Web/Desktop (rulată în browser, compatibilă Windows/macOS).  
+* **Tehnologii:** HTML5, CSS3 (pentru animații fluide și stilizare), JavaScript (pentru logica jocului).  
+* **Grafică:** Vectorială (SVG) pentru claritate maximă pe orice rezoluție, folosind un stil artistic "flat", prietenos și colorat.
 
-### **3\. Filosofia de Design**
+### **2\. Audiență și Accesibilitate**
 
-* **Mediu "Fără Eșec":** Aplicația încurajează explorarea. Greșelile nu sunt pedepsite, ci corectate printr-un feedback blând și amuzant.  
-* **Feedback Auditiv:** Sunete clare pentru fiecare interacțiune (clipocit de apă, fâșâit de vânt, sunete cristaline pentru succes).  
-* **Narațiune Ghidată:** Un personaj sau un narator este mereu prezent pentru a oferi context, eliminând nevoia de a citi text.
+* **Public Țintă:** Copii 5-6 ani.  
+* **Stil Vizual:** Culori vii, forme rotunjite, elemente mari și clare.  
+* **Feedback:** Vizual (schimbări de culoare, animații de succes) și text simplu pentru instrucțiuni.
 
-## **II. Concept A: "Aventura Picăturii Strop"**
+### **3\. Interacțiune**
 
-Tip: Joc Narativ / Platformer (Story-driven)  
-Perspectiva: Micro (Copilul este parte din proces)
+* **Input Primar:** Mouse (Drag & Drop, Click & Hold, Click simplu).  
+* **Interfață:** Minimalistă. Include o bară de progres sus pentru a motiva copilul și instrucțiuni clare (toasts) în partea de jos a ecranului.
 
-### **1\. Viziunea Proiectului**
+## **III. Descrierea Detaliată a Scenariului (Gameplay)**
 
-„Aventura Picăturii Strop” este o călătorie interactivă în care copilul urmărește și controlează un personaj simpatic – o picătură de apă numită „Strop”. Scopul este parcurgerea secvențială a etapelor circuitului apei, experimentând transformările fizice ale apei "pe propria piele".
+Aplicația este structurată secvențial în 4 scene interactive, plus un ecran de start și unul de final.
 
-### **2\. Elemente Centrale**
+### **Scena 1: Evaporarea**
 
-* **Hub-ul Central:** Un peisaj viu care se mișcă ușor, înlocuind meniul static. Copilul alege locația pentru a începe povestea (Mare, Cer, Munte).  
-* **Personaj:** "Strop" – o picătură cu ochi expresivi care vorbește cu copilul („Brr, m-am răcit\!” sau „Mă simt ușor ca un balon\!”).
+* **Context:** Un peisaj marin cu cer senin și un soare strălucitor.  
+* **Obiectiv:** Încălzirea apei mării pentru a crea vapori.  
+* **Mecanică:** **Drag & Drop**. Copilul trebuie să tragă soarele din colțul ecranului și să îl poziționeze aproape de linia apei.  
+* **Feedback:** Când soarele este poziționat corect (jos), apar animații ondulate care sugerează evaporarea ("aburi"), iar soarele strălucește mai puternic.
 
-### **3\. Gameplay și Mecanici pe Etape**
+### **Scena 2: Condensarea**
 
-Aplicația este împărțită în 4 scene secvențiale:
+* **Context:** Cerul albastru unde vaporii trebuie să se adune.  
+* **Obiectiv:** Formarea unui nor de ploaie prin colectarea picăturilor de apă evaporate.  
+* **Mecanică:** **Drag & Drop (Colectare)**. Pe ecran apar 6 picături de apă dispersate. Copilul trebuie să le tragă pe rând în interiorul unui contur de nor punctat.  
+* **Feedback:** Pe măsură ce picăturile sunt adăugate, conturul norului reacționează (flash alb). Când toate cele 6 picături sunt colectate, norul devine solid, pufos și primește o față veselă.
 
-* **Scena 1: Evaporarea (Marea și Soarele)**  
-  * *Obiectiv:* Încălzirea apei pentru a se ridica la cer.  
-  * *Acțiune:* Drag & Drop cu razele soarelui peste apă. Comandă vocală: „Soare\!”.  
-  * *Feedback:* Apar aburi zâmbitori care se ridică spre susul ecranului.  
-* **Scena 2: Condensarea (Cerul și Norii)**  
-  * *Obiectiv:* Formarea norilor.  
-  * *Acțiune (Sortare):* Copilul adună „stropii gazoși” într-un singur loc până fac „Puf\!” și devin un nor.  
-  * *Fără Eșec:* Dacă norul nu e gata, vaporii doar se împrăștie râzând.  
-* **Scena 3: Precipitațiile (Muntele)**  
-  * *Obiectiv:* Golirea norilor deasupra muntelui.  
-  * *Acțiune:* Click & Hold pe nor pentru a-l „stoarce”. Joc de ritm pentru a crea fulgi de nea în zonele reci. Comandă vocală: „Plouă\!” sau „Ningă\!”.  
-* **Scena 4: Colectarea (Râul și Întoarcerea)**  
-  * *Obiectiv:* Ghidarea apei înapoi în mare.  
-  * *Acțiune (Labirint):* Deblocarea drumului prin mutarea pietrelor/buștenilor (Drag & Drop).  
-  * *Final:* Sărbătoare vizuală la reîntâlnirea cu marea.
+### **Scena 3: Precipitațiile**
 
-## **III. Concept B: "Stația Meteo Magică"**
+* **Context:** Un peisaj montan impunător, cu un nor mare pe cer.  
+* **Obiectiv:** Declanșarea ploii pentru a umple rezervoarele naturale de apă.  
+* **Mecanică:** **Click & Hold (Ține apăsat)**. Copilul trebuie să țină click apăsat pe nor.  
+* **Feedback Vizual:**  
+  * Cât timp este apăsat, norul și cerul se întunecă (simulând furtuna).  
+  * Începe o animație de ploaie care cade peste munte.  
+  * În dreapta ecranului, un "rezervor" gradat arată vizual cantitatea de apă din nor scăzând (sau acumulându-se jos), învățând copilul despre volum și durată.
 
-Tip: Joc de Simulare / Puzzle (Logic-driven)  
-Perspectiva: Macro (Copilul privește lumea de sus, "God Game")
+### **Scena 4: Colectarea și Curățarea**
 
-### **1\. Viziunea Proiectului**
+* **Context:** Un râu care curge printr-o câmpie verde, dar cursul apei este blocat de pietre.  
+* **Obiectiv:** Curățarea albiei râului pentru ca apa să poată ajunge înapoi în mare (închiderea circuitului).  
+* **Mecanică:** **Click (Acțiune rapidă)**. Spre deosebire de primele scene, aici interacțiunea este de tip "curățare". Copilul dă click pe cele 5 pietre care blochează râul.  
+* **Feedback:** La click, pietrele se micșorează și dispar (efect "pop"), eliberând vizual cursul apei. Când toate pietrele sunt eliminate, apa curge liberă.
 
-Această abordare transformă copilul într-un „Mic Meteorolog” sau „Vrăjitor al Vremii”. Copilul nu mai controlează o picătură, ci întregul mediu, având acces la un panou de control prin care influențează fenomenele naturii pentru a rezolva probleme (ex: secetă, inundație).
+### **Final**
 
-### **2\. Elemente Centrale**
+* Ecran de felicitare cu un mesaj pozitiv ("Ai completat Circuitul Apei\!") și buton de "Rejoacă", încurajând repetiția pentru fixarea cunoștințelor.
 
-* **Vedere de ansamblu:** O planșă fixă cu un ecosistem complet (lac, munte, grădină) văzut de sus.  
-* **Panoul de Comandă:** Situat în partea de jos, conține "ingredientele" vremii (Soare, Vânt, Frig, Căldură).  
-* **Sarcina:** Rezolvarea unei probleme prin logică cauză-efect, nu prin parcurgerea unei povești liniare.
+## **IV. Elemente Tehnice Specifice Implementate**
 
-### **3\. Gameplay și Mecanici**
-
-* **Mecanica de Combinații:** Copilul trebuie să combine elemente pentru a declanșa o reacție în lanț. Nu există buton direct de "Ploaie".  
-  * *Algoritmul jocului:* Copilul trage „Soarele” peste „Lac” \-\> Se formează Norul \-\> Copilul trage „Frigul” peste „Nor” \-\> Începe Ploaia.  
-* **Interacțiune Vocală:** Copilul dă ordine elementelor naturii: „Soare, încălzește\!”, „Vânt, suflă\!”.  
-* **Recompensă Vizuală:** Transformarea mediului în timp real (iarba devine verde, florile cresc, nivelul râului crește).  
-* **Eșec Amuzant (Trial & Error):** Dacă se aplică prea mult soare fără apă, iarba devine galbenă (dar se repară ușor aducând ploaia).
-
-## **IV. Tabel Comparativ: Concept A vs. Concept B**
-
-| Element | Concept A: "Aventura Picăturii" | Concept B: "Stația Meteo Magică" |
-| :---- | :---- | :---- |
-| **Tipul Jocului** | Narativ / Platformer (Story-driven) | Simulare / Puzzle (Logic-driven) |
-| **Perspectiva** | **Micro** (Ești o picătură mică într-o lume mare) | **Macro** (Vezi toată lumea de sus, ca un uriaș) |
-| **Obiectiv** | Să ajuți personajul să ajungă la finalul călătoriei. | Să menții echilibrul naturii (să uzi florile, să umpli râul). |
-| **Mecanica** | Secvențială (Pasul 1 \-\> Pasul 2 \-\> Pasul 3). | Cauză-Efect (Dacă combin X și Y, rezultă Z). |
-| **Feedback** | Personajul vorbește cu tine (emoțional). | Mediul se schimbă vizual (vizual/logic). |
-
-* **Prima abordare (Concept A)** este emoțională și narativă, potrivită pentru copiii care învață prin povești.  
-* **A doua abordare (Concept B)** este experimentală și logică, potrivită pentru copiii cărora le place să construiască și să vadă efecte.
+1. **Grafică SVG Scalabilă:** Toate elementele (nori, soare, munte, picături) sunt desenate direct în cod folosind SVG. Acest lucru asigură că jocul arată perfect clar pe orice ecran, de la laptopuri mici la monitoare mari, fără pixelare.  
+2. **Sistem de Particule Simplificat:** Pentru ploaie și aburi s-au folosit animații CSS și SVG (\<animate\>) care rulează fluid fără a îngreuna procesorul.  
+3. **Gestionarea Stării (State Management):** Aplicația ține minte progresul în timp real (câte picături au fost adunate, cât timp a plouat, câte pietre au fost curățate) pentru a trece automat la nivelul următor doar când sarcina este completă.
 
 
 
