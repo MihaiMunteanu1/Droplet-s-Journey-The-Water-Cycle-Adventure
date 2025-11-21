@@ -92,6 +92,21 @@ IV. Elemente Tehnice Specifice Implementate
 
 Grafică SVG Scalabilă: Toate elementele (nori, soare, munte, picături) sunt desenate direct în cod folosind SVG. Acest lucru asigură că jocul arată perfect clar pe orice ecran, de la laptopuri mici la monitoare mari, fără pixelare.
 
+
 Sistem de Particule Simplificat: Pentru ploaie și aburi s-au folosit animații CSS și SVG (<animate>) care rulează fluid fără a îngreuna procesorul.
 
 Gestionarea Stării (State Management): Aplicația ține minte progresul în timp real (câte picături au fost adunate, cât timp a plouat, câte pietre au fost curățate) pentru a trece automat la nivelul următor doar când sarcina este completă.
+
+
+
+
+<img width="2363" height="1467" alt="Screenshot 2025-11-21 104705" src="https://github.com/user-attachments/assets/c2006a01-7199-4c63-8a1f-2e11110da5cb" />
+<img width="2285" height="1464" alt="Screenshot 2025-11-21 104714" src="https://github.com/user-attachments/assets/638a517d-8334-4877-8d1b-aa8191418acd" />
+<img width="2278" height="1437" alt="Screenshot 2025-11-21 104727" src="https://github.com/user-attachments/assets/8d92c69f-4d34-4713-ac61-2c0ff4f33790" />
+<img width="2284" height="1441" alt="Screenshot 2025-11-21 104743" src="https://github.com/user-attachments/assets/0a471e89-9b9a-4071-8264-e058110d99d4" />
+<img width="2228" height="1447" alt="Screenshot 2025-11-21 104759" src="https://github.com/user-attachments/assets/39a0dd84-2084-4bfc-98c5-3212f2734ff9" />
+<img width="2183" height="1447" alt="Screenshot 2025-11-21 104810" src="https://github.com/user-attachments/assets/1ba8f52e-9ee5-4ad8-b2bb-4240b52e4c40" />
+
+
+
+
