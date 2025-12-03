@@ -1,7 +1,5 @@
 # **Documentație de Proiectare Finală: "Aventura Picăturii"**
 
-Echipa: Grupa 234  
-Curs: IOC 2025-2026  
 Data: 21 Noiembrie 2025
 
 ## **I. Viziunea Proiectului**
